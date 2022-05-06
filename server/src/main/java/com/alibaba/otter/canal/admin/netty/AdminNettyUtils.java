@@ -26,7 +26,7 @@ public class AdminNettyUtils {
         List<ChannelBuffer> components = new ArrayList<>(2);
         components.add(ChannelBuffers.wrappedBuffer(ByteOrder.BIG_ENDIAN, header));
         components.add(ChannelBuffers.wrappedBuffer(body));
-        Channels.write(channel, new CompositeChannelBuffer(ByteOrder.BIG_ENDIAN, components));
+        Channels.write(channel, new CompositeChannelBuffer(ByteOrder.BIG_ENDIAN, components,true));
     }
 
     public static void write(Channel channel, byte[] body) {

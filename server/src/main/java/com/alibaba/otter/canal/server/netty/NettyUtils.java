@@ -34,9 +34,9 @@ public class NettyUtils {
         components.add(ChannelBuffers.wrappedBuffer(body));
 
         if (channelFutureListner == null) {
-            Channels.write(channel, new CompositeChannelBuffer(ByteOrder.BIG_ENDIAN, components));
+            Channels.write(channel, new CompositeChannelBuffer(ByteOrder.BIG_ENDIAN, components,true));
         } else {
-            Channels.write(channel, new CompositeChannelBuffer(ByteOrder.BIG_ENDIAN, components))
+            Channels.write(channel, new CompositeChannelBuffer(ByteOrder.BIG_ENDIAN, components,true))
                 .addListener(channelFutureListner);
         }
     }

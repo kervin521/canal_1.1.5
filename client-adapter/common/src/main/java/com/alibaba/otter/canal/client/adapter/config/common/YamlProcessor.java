@@ -394,9 +394,8 @@ public abstract class YamlProcessor {
             }
         }
 
-        @Override
         protected Map<Object, Object> createDefaultMap() {
-            final Map<Object, Object> delegate = super.createDefaultMap();
+            final Map<Object, Object> delegate = super.createDefaultMap(16);
             return new AbstractMap<Object, Object>() {
 
                 @Override
